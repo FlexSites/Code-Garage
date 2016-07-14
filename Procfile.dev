@@ -1,0 +1,3 @@
+s3: npm run s3
+api: npm run server
+redis: redis-server

@@ -1,0 +1,35 @@
+{
+  "name": "human-encryption",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "watch": "nf start --procfile Procfile.dev",
+    "server": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dynalite": "dynalite --path dev/dynamo",
+    "s3": "s3rver --directory dev/s3"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "aws-sdk": "^2.4.6",
+    "base-x": "^1.0.4",
+    "bluebird": "^3.4.1",
+    "body-parser": "^1.15.2",
+    "config": "^1.21.0",
+    "cors": "^2.7.1",
+    "express": "^4.14.0",
+    "foreman": "^1.4.1",
+    "hashids": "^1.1.0",
+    "json": "^9.0.4",
+    "lodash.sortby": "^4.5.0",
+    "redis": "^2.6.2",
+    "uuid": "^2.0.2"
+  },
+  "devDependencies": {
+    "dynalite": "^1.0.2",
+    "nodemon": "^1.9.2",
+    "s3rver": "^1.0.2"
+  }
+}
