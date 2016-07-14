@@ -24,6 +24,7 @@
     "hashids": "^1.1.0",
     "json": "^9.0.4",
     "lodash.sortby": "^4.5.0",
+    "lodash.uniq": "^4.3.0",
     "redis": "^2.6.2",
     "uuid": "^2.0.2"
   },

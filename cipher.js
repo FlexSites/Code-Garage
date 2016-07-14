@@ -1,9 +1,16 @@
+'use strict';
 
+const uniq = require('lodash.uniq');
 
 module.exports = class Cipher {
   constructor(alphabet) {
-    this.alphabet = alphabet;
-    this.alphabetLength = alphabet.length;
+    this.alphabet = this.validateAlphabet(alphabet);
+    this.alphabetLength = this.alphabet.length;
+  }
+
+  // Any duplicates create exponential collisions. Remove them so someone doesn't create a stupid alphabet
+  validateAlphabet(alphabet) {
+    return uniq(alphabet.split('')).join('');
   }
 
   fromNumber(number) {

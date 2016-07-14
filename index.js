@@ -12,7 +12,7 @@ const redis = Redis.createClient();
 
 const s3 = require('./services/S3');
 
-const alphabet = 'AJUWL$F7!4T3H1YZ2XG&@PV8BK9?RNDMLCQE6';
+const alphabet = '$CMGXS@T!1B&YFLEI9AW38JK76NUDH5R4Z2?O0PQV';
 
 const Cipher = require('./cipher');
 const cipher = new Cipher(alphabet);
@@ -22,21 +22,10 @@ const config = require('config');
 
 const app = express();
 
-
 app.use(cors());
 app.use(json());
 
 let id = 1225;
-let str = '';
-
-while(str.length <= 3) {
-  str = cipher.encode(id++);
-  if (id - 1 !== cipher.decode(str)) console.log('Failure', id - 1, str, cipher.decode(str));
-}
-
-// ?ML
-// ?8L
-// ?PL
 
 app.get('/keys', (req, res, next) => {
   res.send([uuid.v4()]);
