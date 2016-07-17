@@ -6,6 +6,7 @@
   "scripts": {
     "watch": "nf start --procfile Procfile.dev",
     "server": "nodemon index.js",
+    "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "dynalite": "dynalite --path dev/dynamo",
     "s3": "s3rver --directory dev/s3",
