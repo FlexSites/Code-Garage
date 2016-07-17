@@ -1,36 +1,35 @@
-'use strict';
+'use strict'
 
-const AWS = require('aws-sdk');
-const config = require('config');
-const Bluebird = require('bluebird');
+const AWS = require('aws-sdk')
+const Bluebird = require('bluebird')
 
 const s3 = new AWS.S3({
   region: 'us-west-2',
   params: {
-    Bucket: 'io.graphyte.sandbox',
-  },
-});
+    Bucket: 'io.graphyte.sandbox'
+  }
+})
 
-AWS.config.setPromisesDependency(Bluebird);
+AWS.config.setPromisesDependency(Bluebird)
 
 module.exports = {
-  get(Key) {
-    // let Key = getKey(id);
+  get (id) {
+    let Key = getKey(id)
     return s3.getObject({
-      Key,
-    }).promise();
+      Key
+    }).promise()
   },
-  put(id, Body) {
-    let Key = getKey(id);
+  put (id, Body) {
+    let Key = getKey(id)
     return s3.putObject({
       Key,
-      Body,
+      Body
     })
     .promise()
-    .return(Key);
+    .return(id)
   }
 }
 
-function getKey(id) {
-  return `tokens/${id}.json`;
+function getKey (id) {
+  return `tokens/${id}.json`
 }
