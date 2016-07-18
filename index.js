@@ -1,5 +1,6 @@
 'use strict'
 
+const config = require('config')
 const express = require('express')
 const cors = require('cors')
 
@@ -23,4 +24,4 @@ app.use((err, req, res, next) => {
   res.send(error)
 })
 
-app.listen(3000)
+app.listen(config.get('port'))
