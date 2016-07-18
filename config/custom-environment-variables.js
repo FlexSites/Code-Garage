@@ -1,4 +1,4 @@
 
 module.exports = {
-  redis: 'REDIS_URL',
+  redis: 'REDIS_URL'
 }

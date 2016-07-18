@@ -3,9 +3,10 @@
 const assert = require('assert')
 const uuid = require('uuid')
 const Bluebird = require('bluebird')
+const config = require('config')
 
 const Redis = require('redis')
-const redis = Redis.createClient()
+const redis = Redis.createClient(config.get('redis'))
 
 const s3 = require('./S3')
 
